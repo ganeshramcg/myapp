@@ -1,13 +1,13 @@
 steps:
 # Build the container image
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp', '.']
+- name: 'asia.gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'asia.gcr.io/ethereal-audio-370311/myapp', '.']
 # Push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp']
+- name: 'asia.gcr.io/cloud-builders/docker'
+  args: ['push', 'asia.gcr.io/ethereal-audio-370311/myapp']
 # Deploy container image to Cloud Run
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: 'asia.gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'myapp', '--image', 'gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp', '--region', 'asia-south1']
+  args: ['run', 'deploy', 'myapp', '--image', 'asia.gcr.io/ethereal-audio-370311/myapp', '--region', 'asia-south1', '--platform', 'managed','--port','80']
 images:
-- gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp
+- asia.gcr.io/ethereal-audio-370311/myapp
