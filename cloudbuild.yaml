@@ -8,6 +8,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'asia.gcr.io/ethereal-audio-370311/myapp', '--image', 'gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp', '--region', 'asia-south1']
+  args: ['run', 'deploy', 'myapp', '--image', 'gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp', '--region', 'asia-south1']
 images:
 - gcr.io/ethereal-audio-370311/asia.gcr.io/ethereal-audio-370311/myapp
